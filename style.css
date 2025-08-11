@@ -42,30 +42,28 @@ table {
     table-layout: fixed;
 }
 
+
 th, td {
     padding: 15px 10px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.3);
     vertical-align: middle;
+    background-color: transparent !important;
 }
 
 th {
-    background-color: rgba(0, 0, 0, 0.5);
     font-weight: bold;
     color: white;
+    background-color: transparent !important;
 }
 
-tr:nth-child(even) {
-    background-color: rgba(0,0,0,0);
-}
-
-tr:nth-child(odd) {
-    background-color: rgba(0,0,0,0);
-}
-
+tr:nth-child(even),
+tr:nth-child(odd),
 tr:first-child {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent !important;
 }
+
+
 
 td img {
     width: 160px;
@@ -98,5 +96,3 @@ td {
 th {
     font-size: 16px;
 }
-
-
