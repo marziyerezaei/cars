@@ -9,8 +9,20 @@
 <body>
 
     <div class="table-container">
-        <table>
-            <thead>
+    <table>
+        <thead>
+            <tr>
+                <th>تصویر ماشین</th>
+                <th>نام ماشین</th>
+                <th>قیمت کل</th>
+                <th>نقد</th>
+                <th>وام</th>
+                <th>قسط ۳۶ ماهه</th>
+                <th>قسط ۶۰ ماهه</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- سطر ۱ -->
                 <tr>
                     <td><img src="کلوت.png" alt="ماشین ۱"></td>
                     <td>کلوت</td>
