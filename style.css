@@ -27,8 +27,8 @@ body::before {
 }
 
 .table-container {
-    width: 98%; /* قبلاً 90% بود */
-    max-width: 1800px; /* قبلاً 1400px بود */
+    width: 90%;
+    max-width: 1400px;
     margin: 30px auto;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
@@ -39,20 +39,22 @@ body::before {
 table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: auto; /* قبلاً fixed بود */
+    table-layout: fixed;
 }
+
 
 th, td {
     padding: 15px 10px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.3);
     vertical-align: middle;
+    background-color: transparent !important;
 }
 
 th {
-    background-color: transparent !important;
     font-weight: bold;
     color: white;
+    background-color: transparent !important;
 }
 
 tr:nth-child(even),
@@ -60,6 +62,8 @@ tr:nth-child(odd),
 tr:first-child {
     background-color: transparent !important;
 }
+
+
 
 td img {
     width: 160px;
