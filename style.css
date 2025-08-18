@@ -11,13 +11,14 @@ body {
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    overflow-x: hidden;
     padding-top: 50px;
+    overflow-x: hidden; /* فقط روی body نباشه */
+    position: relative;
 }
 
 body::before {
     content: '';
-    position: fixed;
+    position: fixed;   /* ✅ همیشه تمام صفحه رو می‌پوشونه */
     top: 0;
     left: 0;
     width: 100%;
@@ -33,13 +34,13 @@ body::before {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    overflow-x: auto;  /* ✅ اسکرول افقی برای موبایل */
+    overflow-x: auto;  /* ✅ اسکرول افقی فعال */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 800px;   /* ✅ حداقل عرض جدول */
+    min-width: 900px;   /* ✅ ستون عکس حذف نشه */
 }
 
 th, td {
@@ -48,12 +49,13 @@ th, td {
     border: 1px solid rgba(255, 255, 255, 0.3);
     vertical-align: middle;
     background-color: transparent !important;
-    white-space: nowrap; /* ✅ جلوگیری از شکستن متن */
+    white-space: nowrap; /* ✅ متن‌ها نشکنه */
 }
 
 th {
     font-weight: bold;
     color: white;
+    font-size: 16px;
 }
 
 tr:nth-child(even),
@@ -62,8 +64,13 @@ tr:first-child {
     background-color: transparent !important;
 }
 
+td {
+    font-size: 14px;
+}
+
+/* ✅ ستون عکس */
 td img {
-    max-width: 120px;   /* ✅ عکس‌ها متناسب میشن */
+    max-width: 150px;
     height: auto;
     object-fit: cover;
     border-radius: 5px;
@@ -71,6 +78,7 @@ td img {
     margin: 0 auto;
 }
 
+/* فونت‌ها */
 @font-face {
     font-family: 'Vazirmatn';
     src: url('Vazirmatn-Regular.woff2') format('woff2'),
@@ -86,22 +94,21 @@ td img {
     font-style: normal;
 }
 
-td {
-    font-size: 14px;
-}
-
-th {
-    font-size: 16px;
-}
-
-/* 📱 برای موبایل */
+/* 📱 استایل موبایل */
 @media (max-width: 600px) {
-    td, th {
+    th, td {
         font-size: 12px;
         padding: 8px;
     }
 
     td img {
-        max-width: 70px;
+        max-width: 80px;  /* عکس کوچیک‌تر بشه */
     }
+}
+
+/* ✅ جلوگیری از اینکه تگ‌های دیگه بالای جدول ظاهر بشن */
+h1, h2, h3, p {
+    text-align: center;
+    margin: 10px auto;
+    color: #fff;
 }
