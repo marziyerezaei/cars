@@ -33,15 +33,14 @@ body::before {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
+    overflow-x: auto;  /* ✅ اسکرول افقی برای موبایل */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
+    min-width: 800px;   /* ✅ حداقل عرض جدول */
 }
-
 
 th, td {
     padding: 15px 10px;
@@ -49,12 +48,12 @@ th, td {
     border: 1px solid rgba(255, 255, 255, 0.3);
     vertical-align: middle;
     background-color: transparent !important;
+    white-space: nowrap; /* ✅ جلوگیری از شکستن متن */
 }
 
 th {
     font-weight: bold;
     color: white;
-    background-color: transparent !important;
 }
 
 tr:nth-child(even),
@@ -63,11 +62,9 @@ tr:first-child {
     background-color: transparent !important;
 }
 
-
-
 td img {
-    width: 160px;
-    height: 100px;
+    max-width: 120px;   /* ✅ عکس‌ها متناسب میشن */
+    height: auto;
     object-fit: cover;
     border-radius: 5px;
     display: block;
@@ -95,4 +92,16 @@ td {
 
 th {
     font-size: 16px;
+}
+
+/* 📱 برای موبایل */
+@media (max-width: 600px) {
+    td, th {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    td img {
+        max-width: 70px;
+    }
 }
